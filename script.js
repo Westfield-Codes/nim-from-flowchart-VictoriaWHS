@@ -29,8 +29,10 @@ if (again == true) main();
  * @return none
  */
 function playNim(){
-
-}
+count = 0 ;
+while (count < 21){
+if (count > 21) alert ("you loose");
+else  
 
 /** 
  * userTurn  
@@ -39,7 +41,8 @@ function playNim(){
  * @return none
  */
 function userTurn(){
-
+    count+=3
+    alert("You counted 3. Count is now " + count)
 }
 
 /** 
@@ -49,5 +52,5 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-
+    alert("I counted 3. Count is now " + count)
 }
