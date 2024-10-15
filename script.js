@@ -15,11 +15,10 @@ var count = 0;
  */
 /* Main */
 function main(){
-let again = false
-trainer = prompt(" trainer mode?");
-playNim();
-trainer = cofirm("again");
-if (again == true) main();
+    let again = false;
+    trainer = confirm(" trainer mode?");
+    playNim();
+    if (again == true) main();
 }
 
 /** 
@@ -29,11 +28,12 @@ if (again == true) main();
  * @return none
  */
 function playNim(){
-count = 0 ;
-while (count < 21){
-if (count > 21) alert ("you loose");
-else  
-
+let count = 0;
+if (count < 21) playNim();
+if (count > 20) alert ("you loose");
+else playNim();
+if (count > 20) alert ("you win!");
+}
 /** 
  * userTurn  
  * User enters a turn. Validation against cheating handled by recursion.
@@ -41,8 +41,7 @@ else
  * @return none
  */
 function userTurn(){
-    count+=3
-    alert("You counted 3. Count is now " + count)
+  
 }
 
 /** 
@@ -52,5 +51,6 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-    alert("I counted 3. Count is now " + count)
+
 }
+
