@@ -1,3 +1,4 @@
+
 /* Nim Trainer by [Victoria]
  * based on this flowchart:
  * https://lucid.app/lucidchart/2018baaf-4c26-4a76-a0d5-93c97f444425/view
@@ -28,11 +29,11 @@ function main(){
  * @return none
  */
 function playNim(){
-let count = 0;
-if (count < 21) playNim();
-if (count > 20) alert ("you loose");
-else playNim();
-if (count > 20) alert ("you win!");
+    let count = 0;
+    if (count < 21) playNim();
+    if (count > 20) alert ("you loose");
+    else playNim();
+    if (count > 20) alert ("you win!");
 }
 /** 
  * userTurn  
@@ -54,15 +55,14 @@ function userTurn(){
  * @return none
  */
 function cpuTurn(){
-    if (count==17) turn=3;
-    else if ( count==18);
-    turn=2;
-    else if (count >18) turn=1;
-    else if (trainer == true) turn=4-count%4
+        if (count==17) turn=3;
+        else if ( count==18);
+        turn=2;
+        else if (count >18) turn=1;
+        else if (trainer == true) turn=4-count%4
         (count+=turn);
         alert( "I counted " + turn + " count is now" + count);
-    else (turn == Math.floor(Math.random)1*3);
-    //fix this one above.  Im not sure how to write the random one)//
-    
+        else {
+            turn == Math.floor(Math.random()*3)+1;  
 }
-
+}
