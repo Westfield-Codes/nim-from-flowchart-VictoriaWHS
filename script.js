@@ -74,5 +74,5 @@ function cpuTurn(){
     else if (trainer == true) turn = 4- count% 4;
     else turn = Math.floor(Math.random()*3)+1;
     count+= turn;
-    alert(" I counted 3, count is now " + count + " .");
+alert(" I counted " + turn + ", count is now " + count + " .");
 }
