@@ -17,52 +17,61 @@ var count = 0;
 /* Main */
 function main(){
     let again = false;
-    trainer = confirm(" trainer mode?");
+    trainer = confirm("trainer mode?");
     playNim();
+    again = confirm("play again?");
     if (again == true) main();
 }
 
 /** 
  * playNim 
+
  * plays a game with user first and computer second. Winner declared in an alert box. 
  * @param none 
  * @return none
  */
 function playNim(){
-    let count = 0;
-    if (count < 21) playNim();
-    if (count > 20) alert ("you loose");
-    else playNim();
-    if (count > 20) alert ("you win!");
+count = 0;
+   while (count < 21){
+        userTurn();
+        if (count > 20) alert ("you loose");
+        else{
+            cpuTurn();
+            if (count > 20) alert ("you win!");
+    
+        }
+    } 
 }
 /** 
- * userTurn  
- * User enters a turn. Validation against cheating handled by recursion.
- * @param none 
- * @return none
- */
+* userTurn  
+* User enters a turn. Validation against cheating handled by recursion.
+* @param none 
+* @return none
+*/
 function userTurn(){
-    count = prompt (" input a number 1-3");
-    if (count < 1 || count < 3) alert("your imput is not valid");
-    else (count+=turn);
-    alert("Count is now " + count);
+   let turn = prompt ("Pick a number 1-3");
+   turn=parseInt(turn);
+   if (turn<1 || turn>3){
+    alert("Your imput is invalid");
+    userTurn();
+   }
+    else{
+        count+= turn;
+        alert("count is now " + count);
+    }
 }
-
 /** 
- * cpuTurn 
- * Generate computer's turn without losing on purpose.  Different turns if trainer or simple.  
- * @param none 
- * @return none
- */
+* cpuTurn 
+* Generate computer's turn without losing on purpose.  Different turns if trainer or simple.  
+* @param none 
+* @return none
+*/
 function cpuTurn(){
-        if (count==17) turn=3;
-        else if ( count==18);
-        turn=2;
-        else if (count >18) turn=1;
-        else if (trainer == true) turn=4-count%4
-        (count+=turn);
-        alert( "I counted " + turn + " count is now" + count);
-        else {
-            turn == Math.floor(Math.random()*3)+1;  
-}
+    if (count == 17) turn = 3;
+    else if (count == 18) turn = 2;
+    else if (count >18) turn = 2;
+    else if (trainer == true) turn = 4- count% 4;
+    else turn = Math.floor(Math.random()*3)+1;
+    count+= turn;
+    alert(" I counted 3, count is now " + count + " .");
 }
