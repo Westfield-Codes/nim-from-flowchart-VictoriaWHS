@@ -67,6 +67,7 @@ function userTurn(){
 * @return none
 */
 function cpuTurn(){
+    turn = 0;
     if (count == 17) turn = 3;
     else if (count == 18) turn = 2;
     else if (count >18) turn = 2;
